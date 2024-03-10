@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../src/lib/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="@@CSS_ADDRESS">
+</head>
+<body>
+    <header class="navbar navbar-expand-lg sticky-top" id="menu-nav" style="background-color: transparent;">
+        <div class="container">
+            <img src="../src/images/logo-spider.svg" alt="">
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu-navegacao">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <nav class="navbar-collapse collapse justify-content-end" id="menu-navegacao">
+                <ul class="nav nav-pills d-block d-md-flex">
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link active">
+                            <i class="fa-solid fa-mug-hot p-1"></i>
+                            Início
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#menu" class="nav-link">
+                            <i class="fa-solid fa-utensils p-1"></i>
+                            História
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#news" class="nav-link">
+                            <i class="fa-solid fa-newspaper p-1"></i>
+                            Vilões
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>    
+    <section class="bg-video">
+        <video class="video" autoplay muted loop>
+            <source src="/video/spiderman2-compress.mp4" type="video/mp4">
+        </video>
+    </section>
+    <section class="container">
+        <div class="container-content">
+            <div class="px-1 hero-1">
+                <img src="../src/images/spidertext.png" alt="">
+            </div>
+        </div>
+    </section>
+</body>
+<script src="../src/lib/bootstrap.bundle.min.js"></script>
+<script src="../src/lib/jquery-3.7.1.min.js"></script>
+<script src="@@JS_ADDRESS"></script>
+</html>
