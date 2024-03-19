@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
+    <section class="bg-video">
+        <video class="video" autoplay muted loop>
+            <source src="/video/spiderman2-compress.mp4" type="video/mp4">
+        </video>
+    </section>
     <header class="navbar navbar-expand-lg sticky-top" id="menu-nav" style="background-color: transparent;">
         <div class="container">
             <img src="../src/images/logo-spider.svg" alt="">
@@ -21,13 +26,13 @@
             <nav class="navbar-collapse collapse justify-content-end" id="menu-navegacao">
                 <ul class="nav nav-pills d-block d-md-flex">
                     <li class="nav-item">
-                        <a href="#about" class="nav-link active">
+                        <a href="#start" class="nav-link active">
                             <i class="fa-solid fa-mug-hot p-1"></i>
                             Início
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#menu" class="nav-link">
+                        <a href="#history" class="nav-link">
                             <i class="fa-solid fa-utensils p-1"></i>
                             História
                         </a>
@@ -42,10 +47,32 @@
             </nav>
         </div>
     </header>    
-    <section class="bg-video">
-        <video class="video" autoplay muted loop>
-            <source src="/video/spiderman2-compress.mp4" type="video/mp4">
-        </video>
+    <section id="start" class="sect">
+        <div class="sect-content">
+            <div class="px-1 hero-1">
+                <img src="../src/images/spidertext.png" alt="">
+            </div>
+            <div class="my-2 animation-hero-2">
+                <p>The Amazing Spider-Man é um filme americano de 2012, dos gêneros ação, aventura e fantasia, dirigido por Marc Webb, com roteiro de James Vanderbilt, Alvin Sargent e Steve Kloves baseado em personagens criados por Stan Lee e Steve Ditko.
+                    Este quarto filme da Columbia Pictures baseado no Homem-Aranha é, na verdade, um reinício da série cinematográfica, sendo completamente independente da trilogia anterior.</p>
+            </div>
+        </div>
+        <div class="sect-image">
+            <img src="../src/images/fundo.png" class="spiderman" alt="">
+        </div>
+    </section>
+    <section id="history">
+        <div class="sect">
+            <div class="sect-image">
+                <img src="../src/images/peter-parker.png" class="peter-parker">
+            </div>
+            <div class="sect-content">
+                <div class="mt-2">
+                    <h2 class="mb-2">A história</h2>
+                    <p>Andrew Garfield como Peter Parker / Homem-Aranha: Um adolescente lutando para encontrar seu lugar na vida desde que seus pais desapareceram quando ele era criança. Uma aranha morde-o na parte de trás do pescoço, dando-lhe poderes de aranha, então ele se torna Homem-Aranha.</p>
+                </div>
+            </div>
+        </div>
     </section>
 </body>
 <script src="../src/lib/bootstrap.bundle.min.js"></script>

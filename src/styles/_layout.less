@@ -1,0 +1,73 @@
+.sect {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    height: 75vh;
+}
+
+.sect-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 800px; /* Limita a largura do conteúdo */
+    margin-right: 20px; /* Espaço entre a imagem e o texto */
+
+    img {
+        display: block;
+        width: 100%;
+        max-width: 600px; /* Define a largura máxima da imagem */
+        
+    }
+    p {
+        font-size: 1rem;
+        max-width: 800px;
+        color: #959698;
+        letter-spacing: 1px;
+        line-height: 140%;
+        text-align: justify;
+      }
+}
+
+.px-1 {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.sect-image .spiderman {
+    padding-left: 80px;
+    width: 100%;
+    height: auto;
+    padding-bottom: 100px;
+    -webkit-transform: translate3d(--150px, 0, 0);
+    transform: translate3d(-150px, 0, 0);
+}
+
+.my-2 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+#history {
+    overflow: hidden;
+    background: linear-gradient(225deg, #14181f 0%, #0a0c10 100%);
+
+    .sect {
+        height: 100%;
+    }
+
+    .sect .sect-image .peter-parker {
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        margin-top: 5rem; /* Ajuste conforme necessário */
+        margin-left: 80px;
+        width: 80%;
+    }
+    
+    .sect-content {
+        padding: 0 1rem;
+    }
+  }
