@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                     compress: true,
                 },
                 files: {
-                    'dist/styles/main-min.css' : 'src/styles/main.less'
+                    'public/styles/main-min.css' : 'src/styles/main.less'
                 }
             }
         },
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
             },
             production: {
                 files: {
-                    'dist/scripts/main-min.js': ['src/js/main.js']
+                    'public/scripts/main-min.js': ['src/js/main.js']
                 }
             }
         },
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: 'src/',
                 src: '**',
-                dest: 'dist/'
+                dest: 'public/'
             }
         },
         watch: {
@@ -76,7 +76,7 @@ module.exports = function(grunt) {
                     }
                 ]
             },
-            dist: {
+            public: {
                 options: {
                     patterns: [
                         {
@@ -94,7 +94,7 @@ module.exports = function(grunt) {
                         expand: true,
                         flatten: true,
                         src: ['index.html'],
-                        dest: 'dist/'
+                        dest: 'public/'
                     }
                 ]
             }
@@ -108,5 +108,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy'); 
 
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['less:production', 'uglify:production', 'replace:dist', 'copy']); 
+    grunt.registerTask('build', ['less:production', 'uglify:production', 'replace:public', 'copy']); 
 };

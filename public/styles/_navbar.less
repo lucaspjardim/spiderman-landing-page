@@ -1,0 +1,38 @@
+header {
+    width: 100%;
+}
+
+#menu-nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    
+    .nav {
+        .nav-link {
+            font-family: "Oswald", sans-serif;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 20px;
+            color: red;
+            align-items: center;
+            position: relative; 
+            &:hover {
+                color: white;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 0;
+                height: 3px;
+                background-color: red;
+                transition: width 0.3s ease;
+            }
+
+            &:hover::after {
+                width: 100%; 
+                border-radius: 2%;
+            }
+        }
+    }
+}
