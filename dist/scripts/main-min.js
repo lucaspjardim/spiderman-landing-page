@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){var e=document.getElementById("loader");setTimeout(function(){e.parentNode.removeChild(e)},2500)});
