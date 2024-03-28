@@ -8,10 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
+    <div id="loader" class="hide">
+        <div class="loader-icon"></div>
+    </div>
     <section class="bg-video">
         <video class="video" autoplay muted loop>
             <source src="/video/spiderman2-compress.mp4" type="video/mp4">
@@ -19,112 +23,97 @@
     </section>
     <header class="navbar navbar-expand-lg sticky-top" id="menu-nav" style="background-color: transparent;">
         <div class="container">
-            <img src="../src/images/logo-spider.svg" alt="">
+            <img data-aos="fade-up" data-aos-delay="3000" data-aos-duration="3000" src="../src/images/logo-spider.svg" alt="">
             <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu-navegacao">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <nav class="navbar-collapse collapse justify-content-end" id="menu-navegacao">
-                <ul class="nav nav-pills d-block d-md-flex">
+            <nav class="navbar-collapse collapse justify-content-end" id="menu-navegacao" data-aos="fade-up" data-aos-delay="3000" data-aos-duration="3000">
+                <ul class="nav d-block d-md-flex">
                     <li class="nav-item">
                         <a href="#start" class="nav-link active">
-                            <i class="fa-solid fa-mug-hot p-1"></i>
                             Início
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#history" class="nav-link">
-                            <i class="fa-solid fa-utensils p-1"></i>
                             História
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#news" class="nav-link">
-                            <i class="fa-solid fa-newspaper p-1"></i>
-                            Vilões
+                        <a href="#scenes" class="nav-link">
+                            Cenas
                         </a>
                     </li>
                 </ul>
             </nav>
         </div>
-    </header>    
+    </header>
+    <div data-bs-spy="scroll" data-bs-target="menu-nav">   
     <section id="start" class="sect">
         <div class="sect-content">
-            <div class="px-1 hero-1">
+            <div class="px-1 hero-1" data-aos="fade-right" data-aos-delay="3000" data-aos-duration="3000">
                 <img src="../src/images/spidertext.png" alt="">
             </div>
-            <div class="my-2 animation-hero-2">
+            <div class="my-2 animation-hero-2" data-aos="fade-up" data-aos-delay="3000" data-aos-duration="3000">
                 <p>The Amazing Spider-Man é um filme americano de 2012, dos gêneros ação, aventura e fantasia, dirigido por Marc Webb, com roteiro de James Vanderbilt, Alvin Sargent e Steve Kloves baseado em personagens criados por Stan Lee e Steve Ditko.
                     Este quarto filme da Columbia Pictures baseado no Homem-Aranha é, na verdade, um reinício da série cinematográfica, sendo completamente independente da trilogia anterior.</p>
             </div>
         </div>
-        <div class="sect-image">
+        <div id="myDiv" class="sect-image" data-aos="fade-left" data-aos-delay="3000" data-aos-duration="3000">
             <img src="../src/images/fundo.png" class="spiderman" alt="">
         </div>
     </section>
     <section id="history">
         <div class="sect">
-            <div class="sect-image">
+            <div class="sect-image" data-aos="fade-right">
                 <img src="../src/images/peter-parker.png" class="peter-parker">
             </div>
             <div class="sect-content">
                 <div class="mt-2">
-                    <h2 class="mb-2">A história</h2>
+                    <h2 class="text-history">A historia</h2>
                     <p>Andrew Garfield como Peter Parker / Homem-Aranha: Um adolescente lutando para encontrar seu lugar na vida desde que seus pais desapareceram quando ele era criança. Uma aranha morde-o na parte de trás do pescoço, dando-lhe poderes de aranha, então ele se torna Homem-Aranha.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="car" class="carousel-custom">
+    <h2 class="title-h2">Cenas do filme</h2>
+    <section id="scenes" class="carousel-box">
         <div id="carousel-images" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carousel-images" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carousel-images" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carousel-images" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carousel-images" data-bs-slide-to="3" aria-label="Slide 4"></button>
             </div>
-            <div class="col">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row align-items-center">
-                            <div class="col-md py-2">
-                                <img class="d-block" src="../src/images/slide-1.png" alt="">
-                            </div>
-                            <div class="col-md py-2">
-                                <p class="car-text">Gwen Stacy foi retratada primeiramente como a garota mais bonita da universidade, uma jovem imatura e bastante confusa com seus sentimentos para com relação ao jovem Peter Parker. Ela sempre buscou todos os motivos para odiá-lo e sempre procurava implicar com ele, mas essa atitude escondia um forte sentimento que a jovem sentia pelo rapaz. Sem ela saber ele sentia o mesmo, mas afastava esses pensamentos por pensar que alguém tão diferente dele seria inalcançável. Ela, a mais bela e popular, e ele, só um nerd antissocial. Quando Peter se tornou amigo de Harry Osborn e passou a conviver no seu círculo de amigos, ele se aproximou de Gwen e a atração entre os dois foi ficando cada vez maior.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row align-items-center">
-                            <div class="col-md py-2">
-                                <img class="d-block img-fluid" src="../src/images/slide-2.png" alt="">
-                            </div>
-                            <div class="col-md py-2">
-                                <p class="car-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ex odit quidem laudantium est! Porro possimus enim adipisci libero architecto laborum molestiae voluptate assumenda nostrum, dicta eveniet aliquam maxime mollitia.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row align-items-center">
-                            <div class="col-md py-2">
-                                <img class="d-block img-fluid may" src="../src/images/slide-3.png" alt="">
-                            </div>
-                            <div class="col-md py-2">
-                                <p class="car-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ex odit quidem laudantium est! Porro possimus enim adipisci libero architecto laborum molestiae voluptate assumenda nostrum, dicta eveniet aliquam maxime mollitia.</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="../src/images/slide-1.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="../src/images/slide-2.webp" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="../src/images/slide-3.avif" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="../src/images/slide-4.webp" class="d-block w-100" alt="...">
                 </div>
             </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carousel-images" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel-images" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carousel-images" data-bs-slide="next">
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel-images" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              </button>
+            </button>
         </div>
     </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="../src/lib/bootstrap.bundle.min.js"></script>
+    <script src="../src/lib/jquery-3.7.1.min.js"></script>
+    <script src="./scripts/main-min.js"></script>
+</div> 
 </body>
-<script src="../src/lib/bootstrap.bundle.min.js"></script>
-<script src="../src/lib/jquery-3.7.1.min.js"></script>
-<script src="./src/scripts/main.js"></script>
 </html>

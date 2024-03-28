@@ -10,74 +10,94 @@ module.exports = function(grunt) {
             production: {
                 options: {
                     compress: true,
+                },
+                files: {
+                    'dist/styles/main-min.css' : 'src/styles/main.less'
+                }
+            }
         },
-        files: {
-            'dist/styles/main-min.css' : 'src/styles/main.less'
-        }
-    }
-},
-    watch: {
-        less: {
-            files: ['src/styles/**/*.less'],
-            tasks: ['less:development']
-        },
-        html : {
-            files: ['index.html'],
-            tasks: ['replace:dev']
-        }
-    },
-    replace: {
-        dev: {
+        uglify: {
             options: {
-                patterns: [
+                compress: true,
+            },
+            development: {
+                files: {
+                    'dev/scripts/main-min.js': ['src/js/main.js']
+                }
+            },
+            production: {
+                files: {
+                    'dist/scripts/main-min.js': ['src/js/main.js']
+                }
+            }
+        },
+        watch: {
+            less: {
+                files: ['src/styles/**/*.less'],
+                tasks: ['less:development']
+            },
+            js: {
+                files: ['src/js/**/*.js'],
+                tasks: ['uglify:development']
+            },
+            html : {
+                files: ['index.html'],
+                tasks: ['replace:dev']
+            }
+        },
+        replace: {
+            dev: {
+                options: {
+                    patterns: [
+                        {
+                            match: 'CSS_ADDRESS',
+                            replacement: './styles/main.css'
+                        },
+                        {
+                            match: 'JS_ADDRESS',
+                            replacement: './scripts/main-min.js'
+                        }
+                    ]
+                },
+                files: [
                     {
-                        match: 'CSS_ADDRESS',
-                        replacement: './styles/main.css'
-                    },
-                    {
-                        match: 'JS_ADDRESS',
-                        replacement: './src/scripts/main.js'
+                        expand: true,
+                        flatten: true,
+                        src: ['index.html'],
+                        dest: 'dev/'
                     }
                 ]
             },
-            files: [
-                {
-                    expand: true,
-                    flatten: true,
-                    src: ['index.html'],
-                    dest: 'dev/'
-                }
-            ]
-        },
-        dist: {
-            options: {
-                patterns: [
+            dist: {
+                options: {
+                    patterns: [
+                        {
+                            match: 'CSS_ADDRESS',
+                            replacement: './styles/main-min.css'
+                        },
+                        {
+                            match: 'JS_ADDRESS',
+                            replacement: './scripts/main-min.js'
+                        }
+                    ]
+                },
+                files: [
                     {
-                        match: 'CSS_ADDRESS',
-                        replacement: './styles/main-min.css'
-                    },
-                    {
-                        match: 'JS_ADDRESS',
-                        replacement: './src/scripts/main-min.js'
+                        expand: true,
+                        flatten: true,
+                        src: ['index.html'],
+                        dest: 'dist/'
                     }
                 ]
-            },
-            files: [
-                {
-                    expand: true,
-                    flatten: true,
-                    src: ['prebuild/index.html'],
-                    dest: 'dist/'
-                }
-            ]
+            }
         }
-    }
-})
+    });
 
-    grunt.loadNpmTasks('grunt-contrib-less')
-    grunt.loadNpmTasks('grunt-contrib-watch')
-    grunt.loadNpmTasks('grunt-replace')
+    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-replace');
 
-    grunt.registerTask('default', ['watch'])
-    grunt.registerTask('build', ['less:production', 'replace:dist'])
-}
+    grunt.registerTask('default', ['watch']);
+    grunt.registerTask('build', ['less:production', 'uglify:production', 'replace:dist']);
+};
